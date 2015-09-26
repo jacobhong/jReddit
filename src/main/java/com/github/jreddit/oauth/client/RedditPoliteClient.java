@@ -97,5 +97,11 @@ public class RedditPoliteClient extends RedditClient {
         }
         
     }
+
+	@Override
+	public String put(RedditToken rToken, RedditPostRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 }

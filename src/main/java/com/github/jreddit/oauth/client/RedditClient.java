@@ -27,6 +27,7 @@ public abstract class RedditClient {
      */
     public abstract String post(RedditToken rToken, RedditPostRequest request);
     
+    public abstract String put(RedditToken rToken, RedditPostRequest request);
     /**
      * Perform a GET reddit request authenticated with the given reddit token.<br>
      * <br>
@@ -43,5 +44,6 @@ public abstract class RedditClient {
      * @return Response from reddit (raw), if failed <i>null</i>
      */
     public abstract String get(RedditToken rToken, RedditGetRequest request);
+    
     
 }

@@ -73,5 +73,10 @@ public abstract class Thing implements Comparable<Thing> {
     public String getFullName() {
         return fullName;
     }
+
+	public int compareTo(Thing o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
     
 }

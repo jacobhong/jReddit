@@ -9,6 +9,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.util.EntityUtils;
@@ -73,6 +74,36 @@ public class RedditHttpClient extends RedditClient {
         
     }
     
+	@Override
+	public String put(RedditToken rToken, RedditPostRequest redditRequest) {
+	     
+        try {
+        
+            // Create post request
+            HttpPut request = new HttpPut(OAUTH_API_DOMAIN + redditRequest.generateRedditURI());
+    
+            // Add parameters to body
+            request.setEntity(new StringEntity(redditRequest.generateBody()));
+            
+            // Add authorization
+            addAuthorization(request, rToken);
+            
+            // Add user agent
+            addUserAgent(request);
+            
+            // Add content type
+            request.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            
+            return executeHttpRequest(request);
+        
+        } catch (UnsupportedEncodingException uee) {
+            LOGGER.warn("Unsupported Encoding Exception thrown in PUT request when encoding body", uee);
+        }
+        
+        return null;
+	}
+
+    
     @Override
     public String get(RedditToken rToken, RedditGetRequest redditRequest) {
         
@@ -98,7 +129,6 @@ public class RedditHttpClient extends RedditClient {
      */
     private String executeHttpRequest(HttpUriRequest request) {
         try {
-            
             // Attempt to do execute request
             HttpResponse response = httpClient.execute(request);
             
@@ -137,5 +167,6 @@ public class RedditHttpClient extends RedditClient {
     private void addUserAgent(HttpRequest request) {
         request.addHeader("User-Agent", userAgent);
     }
+
 
 }
