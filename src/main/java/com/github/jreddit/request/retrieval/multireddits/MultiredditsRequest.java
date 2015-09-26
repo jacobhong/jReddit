@@ -1,7 +1,7 @@
 package com.github.jreddit.request.retrieval.multireddits;
 
 import com.github.jreddit.request.RedditGetRequest;
-
+//
 public class MultiredditsRequest extends RedditGetRequest {
 	/** Endpoint format. */
     private String ENDPOINT_FORMAT = "/api/multi/user/";
