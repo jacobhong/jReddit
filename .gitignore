@@ -11,3 +11,4 @@ target/
 sonar-project.properties
 .gradle/
 build/
+node_modules
