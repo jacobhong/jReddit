@@ -12,13 +12,7 @@ public class RedditInstalledApp extends RedditApp {
      * @param clientID Client identifier (e.g. "p_jcolKysdMFud")
      * @param redirectURI Redirect URI (e.g. "http://www.example.com/auth")
      */
-<<<<<<< HEAD
     public RedditInstalledApp(String clientID, String secretKey, String redirectURI) {
         super(clientID, secretKey, redirectURI); // Empty string is the secret for an installed app
-=======
-    public RedditInstalledApp(String clientID, String secret, String redirectURI) {
-        super(clientID, secret, redirectURI); // Empty string is the secret for an installed app
->>>>>>> be1320e6ade623b15cde426ef1f47c5d9e75d837
     }
-    
 }

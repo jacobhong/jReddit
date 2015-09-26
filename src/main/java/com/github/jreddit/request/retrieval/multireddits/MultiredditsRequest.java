@@ -1,4 +1,4 @@
-package com.github.jreddit.request.retrieval.Multireddits;
+package com.github.jreddit.request.retrieval.multireddits;
 
 import com.github.jreddit.request.RedditGetRequest;
 
